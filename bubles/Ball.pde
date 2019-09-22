@@ -45,7 +45,6 @@ class Ball {
     }
     
     circle(xpos, ypos, ballSize);
-    displayConsole();
   }
   
   void displayConsole(){

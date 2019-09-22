@@ -27,11 +27,8 @@ class Balls {
         Ball balli = balls.get(i);
         Ball ballj = balls.get(j);
         d = distance(balli, ballj);
-        //System.out.println(d);  
-        //line(balli.xpos, balli.ypos, ballj.xpos, ballj.ypos);
         if ( d < dmin ) {
           line(balli.xpos, balli.ypos, ballj.xpos, ballj.ypos);
-          //System.out.println(balli.xpos);  
         }
         
       }
