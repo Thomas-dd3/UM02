@@ -1,5 +1,6 @@
 class Ball {
   int ballSize = 50;
+  float colorBall[] = new float[3];
   public float xpos, ypos, speed;
   boolean xplus = true;
   boolean yplus = true;
@@ -8,6 +9,9 @@ class Ball {
     xpos = random(0,width);
     ypos = random(0,height); 
     speed = random(0,5);
+    colorBall[0] = random(0,255);
+    colorBall[1] = random(0,255);
+    colorBall[2] = random(0,255);    
   }
   
   Ball (float x, float y, float s) {  
@@ -44,6 +48,14 @@ class Ball {
       yplus = true;
     }
     
+    this.display();
+  }
+  
+  void display(){
+    int r=0, b=0, g=0;
+    
+    color c = color(r,b,g);
+    fill(c);
     circle(xpos, ypos, ballSize);
   }
   
