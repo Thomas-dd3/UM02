@@ -1,38 +1,84 @@
+import java.util.Optional;
+
 class Balls {
   final int nbBalls = 30;
-  final float dmin = 100;
+  final float dmin = pow(100, 2); //Distante au carré
   ArrayList<Ball> balls = new ArrayList<Ball>();
-  
-  Balls(){
-    
+  ArrayList<Ball> ballsCollected = new ArrayList<Ball>();
+  //Optional<Ball> clickedBall = Optional.empty();
+
+  Balls() {
   }
-  
-  void createBalls(){
-    for ( int j=0 ; j<nbBalls ; j++ ){
+
+  void createBalls() {
+    for ( int j=0; j<nbBalls; j++ ) {
       Ball tempBall = new Ball();
       balls.add(tempBall);
     }
   }
-  
-  void updateBalls(){
-    for ( int j=0 ; j<balls.size() ; j++ ){
+
+  void updateBalls() {
+    ArrayList<Ball> tempBalls = new ArrayList<Ball>();
+    for ( int j=0; j<balls.size(); j++ ) {
       balls.get(j).update();
+      balls.get(j).display();
+      if (!ballsCollected.isEmpty()){
+        Ball ballCursor = ballsCollected.get(0);
+        float d = distanceCarre(balls.get(j), ballCursor);
+        if (d < pow(ballCursor.ballSize/2, 2) ){
+          tempBalls.add(balls.get(j));
+        }
+      }
     }
+    for ( int k=0; k<ballsCollected.size(); k++ ) {
+      ballsCollected.get(k).updateWithCursor();
+      if (k==0){
+        ballsCollected.get(k).display();
+      }
+    }    
+    ballsCollected.addAll(tempBalls);
+    balls.removeAll(tempBalls);
   }
-  
-  void link(){
+
+  void link() {
     float d;
-    for ( int i=0 ; i < balls.size()-1 ; i++ ){
-      for ( int j=i+1 ; j < balls.size() ; j++ ){
-        Ball balli = balls.get(i);
+    for ( int i=0; i < balls.size()-1; i++ ) {
+      Ball balli = balls.get(i);
+      for ( int j=i+1; j < balls.size(); j++ ) {        
         Ball ballj = balls.get(j);
-        d = distance(balli, ballj);
+        d = distanceCarre(balli, ballj);
         if ( d < dmin ) {
           line(balli.xpos, balli.ypos, ballj.xpos, ballj.ypos);
         }
-        
+      }
+    }
+    if (!ballsCollected.isEmpty()){
+      Ball balli = ballsCollected.get(0);
+      for ( int k=0; k < balls.size(); k++ ) {        
+        Ball ballj = balls.get(k);
+        d = distanceCarre(balli, ballj);
+        if ( d < dmin ) {
+          line(balli.xpos, balli.ypos, ballj.xpos, ballj.ypos);
+        }
       }
     }
   }
 
+  void checkClickBall() {
+    float d;
+    for ( int i=0; i<balls.size(); i++ ) {
+      Ball ball = balls.get(i);
+      d = distanceCarre(ball, mouseX, mouseY);
+
+      if (d < pow(ball.ballSize/2, 2) ) {
+        ballsCollected.add(ball);
+        balls.remove(ball);
+      }
+    }
+  }
+
+  void releaseBalls() {
+    balls.addAll(ballsCollected);
+    ballsCollected.clear();
+  }
 }

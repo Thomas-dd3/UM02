@@ -8,7 +8,7 @@ class Ball {
   Ball () {  
     xpos = random(0,width);
     ypos = random(0,height); 
-    speed = random(0,5);
+    speed = random(0,3);
     colorBall[0] = random(0,255);
     colorBall[1] = random(0,255);
     colorBall[2] = random(0,255);    
@@ -48,13 +48,15 @@ class Ball {
       yplus = true;
     }
     
-    this.display();
   }
   
-  void display(){
-    int r=0, b=0, g=0;
-    
-    color c = color(r,b,g);
+  void updateWithCursor(){
+    xpos = mouseX;
+    ypos = mouseY;
+  }
+  
+  void display(){    
+    color c = color(colorBall[0],colorBall[1],colorBall[2]);
     fill(c);
     circle(xpos, ypos, ballSize);
   }
