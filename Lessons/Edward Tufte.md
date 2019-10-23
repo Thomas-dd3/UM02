@@ -1,5 +1,5 @@
 # Edward Tufte
-- He is an analytical design theorist
+    - He is an analytical design theorist
 ### 6 principles:
 1. Strive for graphical integrity
 * THE LIE FACTOR: How much you lie in your visualization.
@@ -40,13 +40,13 @@ The excessive and unnecessary use of graphical effects in graphs used to demonst
 6. Aesthetics & technique
 
     - Have a properly chosen format and design
-  - Use words, numbers, and drawing together
-  - Reflect a balance, a proportion, a sense of relevant scale
-  - Display an accessible complexity of detail
-  - Have a narrative quality, a story to tell about the data
-  - Draw elements in a professional manner, with the technical details of production done with care
-  - Avoid content-free decoration, including chartjunk
+    - Use words, numbers, and drawing together
+    - Reflect a balance, a proportion, a sense of relevant scale
+    - Display an accessible complexity of detail
+    - Have a narrative quality, a story to tell about the data
+    - Draw elements in a professional manner, with the technical details of production done with care
+    - Avoid content-free decoration, including chartjunk
 
 CLUTTER:
-  - Don’t remove the data, change the design
+    - Don’t remove the data, change the design
 
