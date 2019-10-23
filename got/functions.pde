@@ -8,5 +8,5 @@ public float distanceCarre(Ball b1, float x, float y){
 
 
 void displayButtons(){
-  rect(0 + 10, windowY - 10, buttonWidth, buttonHeight);
+  rect(0 + 10, height - 10 - buttonHeight, buttonWidth, buttonHeight);
 }

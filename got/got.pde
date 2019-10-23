@@ -7,9 +7,6 @@ For
 
 */
 //Initialisation de fonction global
-//Size window
-final int windowX = 1000;
-final int windowY = 700;
 //Size button
 final int buttonWidth = 150;
 final int buttonHeight = 40;
@@ -21,7 +18,7 @@ int colorBackground[] = {255,255,255};
 void setup() {
   Table table = loadTable("GOT.csv", "header");
   balls = new Balls(table);
-  size(windowX, windowY);
+  size(1000, 700);
   background(colorBackground[0],colorBackground[1],colorBackground[2]);
   displayButtons();
 
