@@ -39,7 +39,7 @@ The excessive and unnecessary use of graphical effects in graphs used to demonst
 
 6. Aesthetics & technique
 
-  - Have a properly chosen format and design
+    - Have a properly chosen format and design
   - Use words, numbers, and drawing together
   - Reflect a balance, a proportion, a sense of relevant scale
   - Display an accessible complexity of detail
