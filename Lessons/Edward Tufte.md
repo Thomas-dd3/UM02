@@ -5,7 +5,7 @@
 * THE LIE FACTOR: How much you lie in your visualization.
 For example, in a bar chart you can divide the longest bar by the smallest and look if the result is correct according of their initial value.
 * 1st PRINCIPLE
-- The representation of numbers, as physically measured on the surface of the graph itself, should be directly proportional to the numerical quantities represented.
+  - The representation of numbers, as physically measured on the surface of the graph itself, should be directly proportional to the numerical quantities represented.
 - So be careful with 3D
 * 2nd PRINCIPLE
 Clear, detailed and thorough labelling should be used to defeat graphical distortion and ambiguity.
