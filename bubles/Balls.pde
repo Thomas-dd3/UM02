@@ -21,7 +21,6 @@ class Balls {
     ArrayList<Ball> tempBalls = new ArrayList<Ball>();
     for ( int j=0; j<balls.size(); j++ ) {
       balls.get(j).update();
-      balls.get(j).display();
       if (!ballsCollected.isEmpty()){
         Ball ballCursor = ballsCollected.get(0);
         float d = distanceCarre(balls.get(j), ballCursor);
@@ -32,15 +31,22 @@ class Balls {
     }
     for ( int k=0; k<ballsCollected.size(); k++ ) {
       ballsCollected.get(k).updateWithCursor();
-      if (k==0){
-        ballsCollected.get(k).display();
-      }
-    }    
+    }
     ballsCollected.addAll(tempBalls);
     balls.removeAll(tempBalls);
   }
+  
+  void displayBalls() {
+    for ( int j=0; j<balls.size(); j++ ) {
+      balls.get(j).display();
+    }
+    
+    if (ballsCollected.size() > 0){
+      ballsCollected.get(0).display();
+    }
+  }
 
-  void link() {
+  void displayLinks() {
     float d;
     for ( int i=0; i < balls.size()-1; i++ ) {
       Ball balli = balls.get(i);

@@ -21,7 +21,10 @@ void draw(){
   //i+=1;
   background(colorBackground[0],colorBackground[1],colorBackground[2]);
   balls.updateBalls();
-  balls.link();
+  balls.displayLinks();
+  balls.displayBalls();
+  
+  displayLegend();
 }
 
 void mousePressed(){
@@ -32,4 +35,17 @@ void mousePressed(){
 
 void mouseReleased(){
   balls.releaseBalls();  
+}
+
+int cL = 0;
+void displayLegend(){
+  if (cL > 250){
+    return;
+  }
+  textSize(22);
+  color c = color(cL);
+  fill(c);
+  text("Drag a buble",20,20);
+  text("to eat the others!",20,50);
+  cL+=1;
 }
