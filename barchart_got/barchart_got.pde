@@ -1,7 +1,7 @@
 import java.util.List;
 import java.util.Arrays;
 
-int nbPerso = 35;
+int nbPerso = 100;
 int colorBackground = 230;
 int greyL = 191;
 int blueL[] = {102,204,255};

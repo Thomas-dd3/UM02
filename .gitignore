@@ -1,5 +1,10 @@
 
 2019-UM02-Visualization/
 */~*
+*.csv
+
+.ipynb_checkpoints
 
 Thomas-dd3.github.io/
+
+Project All
